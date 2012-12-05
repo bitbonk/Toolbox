@@ -1,4 +1,5 @@
-﻿namespace AbstractBaseClass
+﻿// originally taken from here: http://www.pocketsilicon.com/post/Using-Visual-Studio-Whidbey-to-Design-Abstract-Forms.aspx
+namespace AbstractBaseClass
 {
     using System;
     using System.ComponentModel;
