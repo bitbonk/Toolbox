@@ -1,5 +1,5 @@
 ﻿namespace AbstractBaseClass {
-    partial class GeneralAbstractForm {
+    partial class MainForm {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,9 +23,10 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            this.Text = "AbstractForm";
+            this.Text = "Form1";
         }
 
         #endregion
     }
 }
+

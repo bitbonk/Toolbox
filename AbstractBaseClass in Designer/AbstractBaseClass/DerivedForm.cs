@@ -12,8 +12,6 @@ namespace AbstractBaseClass
         {
             // This call is required by the Windows Form Designer.
             this.InitializeComponent();
-
-            // TODO: Add any initialization after the InitializeComponent call
         }
 
         public override string AbstractProperty { get; set; }
@@ -45,10 +43,10 @@ namespace AbstractBaseClass
             // 
             this.button1.Location = new System.Drawing.Point(13, 13);
             this.button1.Name = "button1";
+            this.button1.Text = "button1";
             this.button1.Size = new System.Drawing.Size(208, 131);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += this.Button1OnClick;
             // 
             // DerivedForm
             // 
@@ -60,7 +58,7 @@ namespace AbstractBaseClass
 
         }
 
-        private void button1_Click(object sender, System.EventArgs e)
+        private void Button1OnClick(object sender, System.EventArgs e)
         {
 
         }

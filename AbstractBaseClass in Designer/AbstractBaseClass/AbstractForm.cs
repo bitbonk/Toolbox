@@ -5,7 +5,7 @@ namespace AbstractBaseClass
     using System.ComponentModel;
     using System.Windows.Forms;
 
-    [TypeDescriptionProvider(typeof (ConcreteClassProvider))]
+    [TypeDescriptionProvider(typeof (ConcreteFormClassProvider))]
     internal abstract partial class AbstractForm : Form
     {
         public AbstractForm()
@@ -24,14 +24,14 @@ namespace AbstractBaseClass
 
     // Here is our type description provider.  All our provider needs to
     // do is return ConcreteForm as the reflection type.
-    internal class ConcreteClassProvider : TypeDescriptionProvider
+    internal class ConcreteFormClassProvider : TypeDescriptionProvider
     {
         // Because we only want to augment the metadata for AbstractForm, instead of
         // completely replace it, we pass into the base class the current type
         // description provider.  This is the provider that normally handles
         // metadata for AbstractForm.  By doing this all we have to do is
         // override the areas we want to change.
-        public ConcreteClassProvider() : base(TypeDescriptor.GetProvider(typeof (AbstractForm)))
+        public ConcreteFormClassProvider() : base(TypeDescriptor.GetProvider(typeof (AbstractForm)))
         {
         }
 

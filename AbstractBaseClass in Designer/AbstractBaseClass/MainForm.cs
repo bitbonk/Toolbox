@@ -2,9 +2,9 @@
 {
     using System.Windows.Forms;
 
-    internal partial class Form1 : Form
+    internal partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             this.InitializeComponent();
         }
