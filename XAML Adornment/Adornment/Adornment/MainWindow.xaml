@@ -15,7 +15,7 @@
     </Grid.ColumnDefinitions>
 
     <!-- place content inside with dynamic layout -->
-    <Label Grid.Column="2" Background="LightBlue" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+    <Button Grid.Column="2"  HorizontalAlignment="Center" VerticalAlignment="Center"
            Content="place inside" fwk:Adornment.IsVisible="true">
       <fwk:Adornment.Template>
         <ControlTemplate>
@@ -35,10 +35,10 @@
           </fwk:AdornmentProxy>
         </ControlTemplate>
       </fwk:Adornment.Template>
-    </Label>
+    </Button>
 
     <!-- place content outside with dynamic layout -->
-    <Label Grid.Column="1" Background="LightGreen" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center"
+    <Button Grid.Column="1"  HorizontalAlignment="Center" VerticalAlignment="Center"
            Content="place outside" fwk:Adornment.IsVisible="true">
       <fwk:Adornment.Template>
         <ControlTemplate>
@@ -53,22 +53,22 @@
               <ColumnDefinition />
               <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <Rectangle Grid.Row="0" Grid.Column="0" Width="6" Height="6" Fill="Red" />
-            <Rectangle Grid.Row="1" Grid.Column="0" Width="6" Height="6" Fill="Red" />
-            <Rectangle Grid.Row="2" Grid.Column="0" Width="6" Height="6" Fill="Red" />
-            <Rectangle Grid.Row="0" Grid.Column="2" Width="6" Height="6" Fill="Red" />
+            <Rectangle   Width="6" Height="6" Fill="Red" />
+            <Rectangle Grid.Row="1"  Width="6" Height="6" Fill="Red" />
+            <Rectangle Grid.Row="2"  Width="6" Height="6" Fill="Red" />
+            <Rectangle  Grid.Column="2" Width="6" Height="6" Fill="Red" />
             <Rectangle Grid.Row="1" Grid.Column="2" Width="6" Height="6" Fill="Red" />
             <Rectangle Grid.Row="2" Grid.Column="2" Width="6" Height="6" Fill="Red" />
-            <Rectangle Grid.Row="0" Grid.Column="1" Width="6" Height="6" Fill="Red" />
+            <Rectangle  Grid.Column="1" Width="6" Height="6" Fill="Red" />
             <Rectangle Grid.Row="2" Grid.Column="1" Width="6" Height="6" Fill="Red" />
             <fwk:AdornmentProxy Grid.Row="1" Grid.Column="1" />
           </Grid>
         </ControlTemplate>
       </fwk:Adornment.Template>
-    </Label>
+    </Button>
 
     <!-- simple example -->
-    <Label Grid.Column="0" Background="LightGoldenrodYellow" Grid.Row="0" HorizontalAlignment="Center"
+    <Button   HorizontalAlignment="Center"
            VerticalAlignment="Center" Content="simple" fwk:Adornment.IsVisible="true">
       <fwk:Adornment.Template>
         <ControlTemplate>
@@ -77,10 +77,10 @@
           </Border>
         </ControlTemplate>
       </fwk:Adornment.Template>
-    </Label>
+    </Button>
     
     <!-- show adorner on mouse over -->
-    <Label Grid.Column="0" Background="LightGray" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+    <Button  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"
            Content="show on hover" fwk:Adornment.IsVisible="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}">
       <fwk:Adornment.Template>
         <ControlTemplate>
@@ -89,7 +89,7 @@
           </Border>
         </ControlTemplate>
       </fwk:Adornment.Template>
-    </Label>
+    </Button>
 
     <!-- show adorner on toggle click -->
     <ToggleButton Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="toggle"
@@ -104,7 +104,7 @@
     </ToggleButton>
 
     <!-- fade in -->
-    <Label Grid.Column="2" Background="LightCyan" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"
+    <Button Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"
            Content="fade in" fwk:Adornment.IsVisible="{Binding IsMouseOver, RelativeSource={RelativeSource Self}}">
       <fwk:Adornment.Template>
         <ControlTemplate>
@@ -122,10 +122,10 @@
           </Border>
         </ControlTemplate>
       </fwk:Adornment.Template>
-    </Label>
+    </Button>
 
-    <!-- simple example -->
-    <Label d:DataContext="designtime data" DataContext="{Binding Data}" Grid.Column="0" Background="LightCoral" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+    <!-- the adorner has the same datacontext as the adornee, so the bindings work as expected -->
+    <Button d:DataContext="designtime data" DataContext="{Binding Data}"  Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center"
            Content="inherited datacontext" fwk:Adornment.IsVisible="true">
       <fwk:Adornment.Template>
         <ControlTemplate>
@@ -137,6 +137,6 @@
           </StackPanel>
         </ControlTemplate>
       </fwk:Adornment.Template>
-    </Label>
+    </Button>
   </Grid>
 </Window>
