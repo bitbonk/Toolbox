@@ -1,3 +1,4 @@
+// original idea by Josh Smith from http://www.codeproject.com/Articles/16342/WPF-JoshSmith
 namespace View﻿
 {
     using System;
