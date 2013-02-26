@@ -1,7 +1,7 @@
-﻿namespace AIS.RollerFoundry.View.Common
+namespace View﻿
 {
     // original idea by Josh Smith from http://www.codeproject.com/Articles/16342/WPF-JoshSmith
-	using System;
+    using System;
     using System.Collections;
     using System.Windows;
     using System.Windows.Documents;
