@@ -1,14 +1,14 @@
 namespace View﻿
 {
-    // original idea by Josh Smith from http://www.codeproject.com/Articles/16342/WPF-JoshSmith
-    using System;
+        using System;
     using System.Collections;
     using System.Windows;
     using System.Windows.Documents;
     using System.Windows.Media;
 
     /// <summary>
-    ///   An adorner that allows adornment of one <see cref="UIElement" /> with another <see cref="UIElement" /> .
+    ///     An adorner that allows adornment of one <see cref="UIElement" /> with another
+    ///     <see cref="UIElement" /> .
     /// </summary>
     public class UIElementAdorner : Adorner
     {
@@ -17,7 +17,7 @@ namespace View﻿
         private double offsetTop;
 
         /// <summary>
-        ///   Initializes a new instance of the <see cref="UIElementAdorner" /> class.
+        ///     Initializes a new instance of the <see cref="UIElementAdorner" /> class.
         /// </summary>
         /// <param name="adornedElement"> The adorned element. </param>
         /// <param name="childElement"> The child element to be used as the content of the adorner. </param>
@@ -35,11 +35,14 @@ namespace View﻿
         }
 
         /// <summary>
-        ///   Gets or sets the horizontal offset of the adorner.
+        ///     Gets or sets the horizontal offset of the adorner.
         /// </summary>
         public double OffsetLeft
         {
-            get { return this.offsetLeft; }
+            get
+            {
+                return this.offsetLeft;
+            }
             set
             {
                 this.offsetLeft = value;
@@ -48,11 +51,14 @@ namespace View﻿
         }
 
         /// <summary>
-        ///   Gets or sets the vertical offset of the adorner.
+        ///     Gets or sets the vertical offset of the adorner.
         /// </summary>
         public double OffsetTop
         {
-            get { return this.offsetTop; }
+            get
+            {
+                return this.offsetTop;
+            }
             set
             {
                 this.offsetTop = value;
@@ -61,25 +67,32 @@ namespace View﻿
         }
 
         /// <summary>
-        ///   Gets an enumerator for logical child elements of this element.
+        ///     Gets an enumerator for logical child elements of this element.
         /// </summary>
         /// <returns> An enumerator for logical child elements of this element. </returns>
         protected override IEnumerator LogicalChildren
         {
-            get { return new[] {this.child}.GetEnumerator(); }
+            get
+            {
+                return new[] { this.child }.GetEnumerator();
+            }
         }
 
         /// <summary>
-        ///   Gets the number of visual child elements within this element.
+        ///     Gets the number of visual child elements within this element.
         /// </summary>
         /// <returns> The number of visual child elements for this element. </returns>
         protected override int VisualChildrenCount
         {
-            get { return 1; }
+            get
+            {
+                return 1;
+            }
         }
 
         /// <summary>
-        ///   Returns a <see cref="Transform" /> for the adorner, based on the transform that is currently applied to the adorned element.
+        ///     Returns a <see cref="Transform" /> for the adorner, based on the transform that is currently
+        ///     applied to the adorned element.
         /// </summary>
         /// <param name="transform"> The transform that is currently applied to the adorned element. </param>
         /// <returns> A transform to apply to the adorner. </returns>
@@ -92,7 +105,7 @@ namespace View﻿
         }
 
         /// <summary>
-        ///   Updates the location of the adorner in one atomic operation.
+        ///     Updates the location of the adorner in one atomic operation.
         /// </summary>
         /// <param name="left"> The desired left offset. </param>
         /// <param name="top"> The desired top offset </param>
@@ -104,9 +117,13 @@ namespace View﻿
         }
 
         /// <summary>
-        ///   When overridden in a derived class, positions child elements and determines a size for a <see cref="FrameworkElement" /> derived class.
+        ///     When overridden in a derived class, positions child elements and determines a size for a
+        ///     <see cref="FrameworkElement" /> derived class.
         /// </summary>
-        /// <param name="finalSize"> The final area within the parent that this element should use to arrange itself and its children. </param>
+        /// <param name="finalSize">
+        ///     The final area within the parent that this element should use to arrange
+        ///     itself and its children.
+        /// </param>
         /// <returns> The actual size used. </returns>
         protected override Size ArrangeOverride(Size finalSize)
         {
@@ -115,20 +132,26 @@ namespace View﻿
         }
 
         /// <summary>
-        ///   Overrides <see cref="GetVisualChild(System.Int32)" /> , and returns a child at the specified index from a collection of child elements.
+        ///     Overrides <see cref="GetVisualChild(System.Int32)" /> , and returns a child at the specified
+        ///     index from a collection of child elements.
         /// </summary>
         /// <param name="index"> The zero-based index of the requested child element in the collection. </param>
-        /// <returns> The requested child element. This should not return null; if the provided index is out of range, an exception is thrown. </returns>
+        /// <returns>
+        ///     The requested child element. This should not return null; if the provided index is out of
+        ///     range, an exception is thrown.
+        /// </returns>
         protected override Visual GetVisualChild(int index)
         {
             return this.child;
         }
 
         /// <summary>
-        ///   Implements any custom measuring behavior for the adorner.
+        ///     Implements any custom measuring behavior for the adorner.
         /// </summary>
         /// <param name="constraint"> A size to constrain the adorner to. </param>
-        /// <returns> A <see cref="Size" /> object representing the amount of layout space needed by the adorner. </returns>
+        /// <returns>
+        ///     A <see cref="Size" /> object representing the amount of layout space needed by the adorner.
+        /// </returns>
         protected override Size MeasureOverride(Size constraint)
         {
             this.child.Measure(constraint);
